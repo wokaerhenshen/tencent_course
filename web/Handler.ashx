@@ -2,6 +2,7 @@
 
 using System;
 using System.Web;
+using web;
 
 public class Handler : IHttpHandler {
 
@@ -9,6 +10,7 @@ public class Handler : IHttpHandler {
         string username = context.Request.Form["name"];
         string pwd = context.Request.Form["password"];
         string strSql = string.Format("SELECT userid FROM userinfo where username='{0}' and password='{1}'",username,pwd);
+
 
     }
 
