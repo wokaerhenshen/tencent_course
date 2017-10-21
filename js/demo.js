@@ -2,7 +2,7 @@
     layer.open({
         type: 1,
         title: "login",
-        area: ['500px', '500px'],
+        area: ['500px', '300px'],
         content: $("#loginbox")
     });
 }
@@ -19,6 +19,42 @@ function login() {
     }
 
     else {
-        $.post("connector.ashx", { "name": username, "password": pwd }, function (data) { });
+        //using jquery to pass the form
+        $.post("connector.ashx", { "name": username, "password": pwd }, function (data) {
+            if (data == "true") {
+                layer.alert("success!", {
+                    title: "提示",
+                    icon: 6
+                });
+
+            }
+            else {
+                layer.alert("fail!", {
+                    title: "提示",
+                    icon: 5
+                });
+            }
+
+        });
+
+        //using jquery ajax and json to pass the parameters:
+        /*
+        $.ajax({
+            type: "POST",
+            url: "connector.ashx",
+            data: { username: username, pwd: pwd },
+            contentType: 'application/json; charset=utf-8',
+            dataType: "json",
+            success: function (Jdata) {
+                alert("success");
+            },
+            error: function () {
+                alert("error");
+            }
+        });
+          */
+
+
+
     }
 }

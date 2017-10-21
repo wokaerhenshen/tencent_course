@@ -23,6 +23,8 @@ body {
     color:white;
 }
 
+
+
 #loginbox input{
     width:350px;
     height:50px;
@@ -38,4 +40,14 @@ body {
     line-height:50px;
     text-align:center;
     font-size:30px;
+
+}
+
+#loginbox{
+   display:none;
+}
+
+.loginitem{
+    margin-top:15px;
+    margin-left:70px;
 }
