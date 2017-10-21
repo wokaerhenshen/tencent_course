@@ -12,12 +12,18 @@
 <body>
     <div id="header">
         <div><a href="javascript:;" id="login" onclick="ShowLoginBox()">login</a></div>
-        <div><a href="javascript:;" id="register">register</a></div>
+        <div><a href="javascript:;" id="register" onclick="ShowRegBox()">register</a></div>
     </div>
     <div id="loginbox">
         <div class="loginitem"><input type="text" id="userName" placeholder="please input username" /></div>
         <div class="loginitem"><input type="password" id="pwd" placeholder="please input password" /></div>
         <div class="loginitem"> <a href="javascript:;" onclick="login()">login</a></div>
+    </div>
+
+    <div id="regbox">
+        <div class="loginitem"><input type="text" id="regUserName" placeholder="please input username"/></div>
+        <div class="loginitem"><input type="text" id="regpwd" placeholder="please input pwd" /></div>
+        <div class="loginitem"><a href="javascript:;" onclick="reg()">Regist</a></div>
     </div>
 </body>
 </html>

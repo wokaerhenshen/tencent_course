@@ -7,6 +7,15 @@
     });
 }
 
+function ShowRegBox() {
+    layer.open({
+    type: 1,
+    title: "reg",
+    area: ['500px', '300px'],
+    content: $("#regbox")
+});
+}
+
 function login() {
     var username = $.trim($("#userName").val());// get user name
     var pwd = $.trim($("#pwd").val()); //get pwd
@@ -20,7 +29,7 @@ function login() {
 
     else {
         //using jquery to pass the form
-        $.post("connector.ashx", { "name": username, "password": pwd }, function (data) {
+        $.post("connector.ashx", { "name": username, "password": pwd, "cmd":"login" }, function (data) {
             if (data == "true") {
                 layer.alert("success!", {
                     title: "提示",
@@ -56,5 +65,36 @@ function login() {
 
 
 
+    }
+}
+
+function reg() {
+    var username = $.trim($("#regUserName").val());// get user name
+    var pwd = $.trim($("#regpwd").val()); //get pwd
+
+    if (username == "" || pwd == "") {
+        layer.alert("username or password can't be empty", {
+            title: "remainder",
+            icon: 5
+        });
+    }
+
+    else {
+        $.post("connector.ashx", { "name": username, "password": pwd, "cmd": "reg" }, function (data) {
+            if (data == "true") {
+                layer.alert("注册成功!", {
+                    title: "提示",
+                    icon: 6
+                });
+
+            }
+            else {
+                layer.alert("用户名已被使用!", {
+                    title: "提示",
+                    icon: 5
+                });
+            }
+
+        });
     }
 }

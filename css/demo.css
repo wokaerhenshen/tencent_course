@@ -25,27 +25,26 @@ body {
 
 
 
-#loginbox input{
-    width:350px;
-    height:50px;
-   
+.loginitem input {
+    width: 350px;
+    height: 50px;
 }
 
-#loginbox a {
-    background-color:black;
-    color:white;
-    display:block;
-    width:350px;
-    height:50px;
-    line-height:50px;
-    text-align:center;
-    font-size:30px;
-
+.loginitem a {
+    background-color: black;
+    color: white;
+    display: block;
+    width: 350px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 30px;
 }
 
-#loginbox{
-   display:none;
+#loginbox, #regbox {
+    display: none;
 }
+
 
 .loginitem{
     margin-top:15px;
