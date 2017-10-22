@@ -36,7 +36,7 @@ public class connector : IHttpHandler {
     {
         string username = context.Request.Form["name"];
         string pwd = context.Request.Form["password"];
-        string strSql = string.Format("SELECT UserName FROM UserInfor where UserName='{0}' and Pwd='{1}'", username, pwd);
+        string strSql = string.Format("SELECT UserName FROM userinfo where UserName='{0}' and Pwd='{1}'", username, pwd);
         DataTable td = RunSQL(strSql);
         if (td.Rows.Count == 0)
         {
@@ -56,9 +56,19 @@ public class connector : IHttpHandler {
     {
         string username = context.Request.Form["name"];
         string pwd = context.Request.Form["password"];
-        string strSql1 = string.Format("SELECT UserID from userinfo where UserName = ");
+        string strSql1 = string.Format("SELECT UserName from userinfo where UserName ='{0}' ",username);
+        DataTable td = RunSQL(strSql1);
+        if (td.Rows.Count == 0)
+        {
+            string insert = string.Format("Insert into userinfo values('{0}','{1}')",username,pwd);
+            DataTable td2 = RunSQL(insert);
+            return "true";
+        }
+        else {
 
-        return "";
+            return "false";
+        }
+
     }
 
     //Console.WriteLine(username);
@@ -67,7 +77,6 @@ public class connector : IHttpHandler {
 
     public void ProcessRequest (HttpContext context) {
         this.context = context;
-
         string cmd = context.Request.Form["cmd"];
         switch (cmd)
         {
