@@ -98,3 +98,26 @@ function reg() {
         });
     }
 }
+
+function ShowImgBox() {
+    $("#cimgbox").slideDown();
+}
+
+function HideImgBox() {
+    $("#cimgbox").slideUp();
+}
+
+$(function () {
+    if ($.cookie("bgimg") =="" || $.cookie("bgimg") == null){
+    $("body").css("background-image", "url(img/food_1.jpg)");
+    }
+    else{
+        $("body").css("background-image", "url('" + $.cookie("bgimg") + "')");
+    }
+
+    $(".imgstuff").click(function () {
+        var src = ($(this).attr("src"));
+        $("body").css("background-image", "url('" + src + "')");
+        $.cookie("bgimg", src);
+    });
+});

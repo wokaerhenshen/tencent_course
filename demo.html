@@ -5,6 +5,7 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="layer/layer.js"></script>
     <script src="js/jquery.md5.js"></script>
+    <script src="js/jquery.cookie.js"></script>
     <script src="js/demo.js"></script>
     <link href="css/demo.css" rel="stylesheet" />
     <meta charset="utf-8" />
@@ -12,6 +13,7 @@
 </head>
 <body>
     <div id="header">
+        <div class="dbg"><a href="javascript:;" onclick="ShowImgBox()">change theme</a></div>
         <div><a href="javascript:;" id="login" onclick="ShowLoginBox()">login</a></div>
         <div><a href="javascript:;" id="register" onclick="ShowRegBox()">register</a></div>
     </div>
@@ -25,6 +27,22 @@
         <div class="loginitem"><input type="text" id="regUserName" placeholder="please input username"/></div>
         <div class="loginitem"><input type="text" id="regpwd" placeholder="please input pwd" /></div>
         <div class="loginitem"><a href="javascript:;" onclick="reg()">Regist</a></div>
+    </div>
+
+    <div id="cimgbox">
+        <div id="imgheader">
+            <div id="title_part">
+                <div id="title_1">list</div>
+                <div id="title_2" onclick="HideImgBox()">up</div>
+            </div>
+        </div>
+        <div id="imgbody">
+            <img src="img/food_1.jpg" alt="1" class="imgstuff">
+            <img src="img/food_2.jpg" alt="2" class="imgstuff">
+            <img src="img/food_3.jpg" alt="3" class="imgstuff">
+            <img src="img/food_4.jpg" alt="4" class="imgstuff">
+            <img src="img/food_5.jpg" alt="5" class="imgstuff">
+        </div>
     </div>
 </body>
 </html>
